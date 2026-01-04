@@ -1,184 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bold Latin Bites | Fresh Latin-Inspired Meal Prep</title>
-  <meta name="description" content="Bold Latin Bites offers fresh, bold, Latin-inspired meal prep made weekly with high-quality ingredients." />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #c62828, #f9a825);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .cta {
-      margin-top: 30px;
-    }
-    .cta a {
-      background: #2e7d32;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .menu-item h3 {
-      margin-bottom: 8px;
-    }
-    .menu-item span {
-      color: #c62828;
-      font-weight: bold;
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      text-align: center;
-    }
-    footer {
-      background: #111;
-      color: #ccc;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    footer a {
-      color: #f9a825;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
+import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { Flame, UtensilsCrossed, HeartPulse, Phone } from "lucide-react"; import { motion } from "framer-motion";
 
-  <header>
-    <h1>Bold Latin Bites</h1>
-    <p>Chef-crafted Latin-inspired meal prep made fresh weekly. Big flavor. Real ingredients. Zero stress.</p>
-    <div class="cta">
-      <a href="#menu">View This Week’s Menu</a>
-    </div>
-  </header>
+export default function BoldLatinBitesWebsite() { return ( <div className="min-h-screen bg-white text-gray-900"> {/* Hero */} <section className="relative overflow-hidden"> <div className="max-w-6xl mx-auto px-6 py-24 text-center"> <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-6xl font-extrabold mb-4" > Bold Latin Bites </motion.h1> <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto" > Authentic Latin flavors. Freshly prepped. Healthy, bold, and ready to go. </motion.p> <div className="mt-8 flex items-center justify-center gap-4"> <Button className="rounded-2xl px-8 py-6 text-base">Order Your Meals</Button> <Button variant="outline" className="rounded-2xl px-8 py-6 text-base"> View Menu </Button> </div> </div> </section>
 
-  <section>
-    <h2>Why Bold Latin Bites?</h2>
-    <div class="features">
-      <div class="card">
-        <h3>🌶 Bold Latin Flavors</h3>
-        <p>Inspired by Mexican, Caribbean, and South American cuisine — never bland, always satisfying.</p>
-      </div>
-      <div class="card">
-        <h3>🥗 Fresh & Balanced</h3>
-        <p>High-quality proteins, seasonal vegetables, and smart carbs to fuel your week.</p>
-      </div>
-      <div class="card">
-        <h3>⏱ Save Time</h3>
-        <p>No shopping. No cooking. Just heat, eat, and enjoy more free time.</p>
-      </div>
+{/* About */}
+  <section className="py-16 px-6 max-w-6xl mx-auto">
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+      <h2 className="text-3xl font-bold mb-6 text-center">What We Do</h2>
+      <p className="text-center max-w-3xl mx-auto text-gray-600">
+        Bold Latin Bites is a Latin-inspired meal prep company bringing you the rich,
+        traditional flavors you love — with a healthy twist. Perfect for busy
+        professionals, families, and anyone serious about flavor and nutrition.
+      </p>
+    </motion.div>
+  </section>
+
+  {/* Features */}
+  <section className="bg-gray-50 py-16 px-6">
+    <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <Card className="rounded-2xl shadow-md">
+        <CardContent className="p-6 text-center">
+          <Flame className="mx-auto mb-4" />
+          <h3 className="font-bold text-xl mb-2">Bold Latin Flavor</h3>
+          <p className="text-gray-600">
+            Seasoned with authentic spices inspired by Caribbean & Latin cuisine.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl shadow-md">
+        <CardContent className="p-6 text-center">
+          <HeartPulse className="mx-auto mb-4" />
+          <h3 className="font-bold text-xl mb-2">Healthy & Balanced</h3>
+          <p className="text-gray-600">
+            Portion-controlled meals designed for weight loss and active lifestyles.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-2xl shadow-md">
+        <CardContent className="p-6 text-center">
+          <UtensilsCrossed className="mx-auto mb-4" />
+          <h3 className="font-bold text-xl mb-2">Ready to Eat</h3>
+          <p className="text-gray-600">Fresh, convenient meals—just heat and enjoy.</p>
+        </CardContent>
+      </Card>
     </div>
   </section>
 
-  <section id="menu">
-    <h2>This Week’s Menu</h2>
-    <div class="menu">
-      <div class="card menu-item">
-        <h3>Mojo Chicken Bowl</h3>
-        <p>Citrus-marinated chicken, cilantro rice, black beans & roasted peppers.</p>
-        <span>$11.99</span>
-      </div>
-      <div class="card menu-item">
-        <h3>Carne Asada Plate</h3>
-        <p>Grilled steak, sweet plantains, garlic green beans & chimichurri.</p>
-        <span>$13.99</span>
-      </div>
-      <div class="card menu-item">
-        <h3>Chipotle Shrimp</h3>
-        <p>Spicy shrimp, quinoa, corn salsa & lime crema.</p>
-        <span>$13.49</span>
-      </div>
-      <div class="card menu-item">
-        <h3>Vegetarian Fiesta Bowl</h3>
-        <p>Roasted veggies, sofrito lentils, avocado & brown rice.</p>
-        <span>$10.99</span>
-      </div>
+  {/* Menu Preview */}
+  <section className="py-16 px-6 max-w-6xl mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-10">Popular Meals</h2>
+    <div className="grid md:grid-cols-3 gap-6">
+      {["Puerto Rican Chicken Bowl", "Caribbean Steak & Veggies", "Garlic Shrimp & Rice"].map(
+        (item) => (
+          <Card key={item} className="rounded-2xl shadow-md">
+            <CardContent className="p-6">
+              <h3 className="font-semibold text-lg mb-2">{item}</h3>
+              <p className="text-gray-600 text-sm">
+                High-protein, flavorful, and perfectly portioned for your goals.
+              </p>
+            </CardContent>
+          </Card>
+        )
+      )}
+    </div>
+    <div className="text-center mt-10">
+      <Button className="rounded-2xl px-8 py-6">See Full Menu</Button>
     </div>
   </section>
 
-  <section>
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="card">
-        <h3>1. Order</h3>
-        <p>Select your meals by weekly cutoff.</p>
-      </div>
-      <div class="card">
-        <h3>2. We Cook</h3>
-        <p>Meals prepared fresh in our kitchen.</p>
-      </div>
-      <div class="card">
-        <h3>3. Pickup or Delivery</h3>
-        <p>Convenient local pickup or delivery options.</p>
-      </div>
-      <div class="card">
-        <h3>4. Enjoy</h3>
-        <p>Heat, eat, and repeat all week.</p>
-      </div>
+  {/* CTA */}
+  <section className="bg-gray-900 text-white py-16 px-6">
+    <div className="max-w-4xl mx-auto text-center">
+      <h2 className="text-3xl font-bold mb-4">Ready to Eat Bold?</h2>
+      <p className="text-gray-300 mb-8">
+        Fresh weekly meal prep with bold Latin flavor delivered or ready for pickup.
+      </p>
+      <Button className="rounded-2xl px-10 py-6">Start Your Order</Button>
     </div>
   </section>
 
-  <section>
-    <h2>Ready to Eat Bold?</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto 30px;">
-      Join hundreds of customers enjoying bold Latin flavors without the hassle of cooking.
-    </p>
-    <div style="text-align:center;">
-      <a class="cta" href="#">Order Now</a>
+  {/* Contact */}
+  <footer className="py-12 px-6 max-w-6xl mx-auto">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <p className="text-gray-600">© {new Date().getFullYear()} Bold Latin Bites</p>
+      <div className="flex items-center gap-2 text-gray-600">
+        <Phone className="w-4 h-4" />
+        <span>Order by phone or text</span>
+      </div>
     </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Bold Latin Bites • All Rights Reserved</p>
-    <p>Follow us on <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
   </footer>
+</div>
 
-</body>
-</html>
+); }
